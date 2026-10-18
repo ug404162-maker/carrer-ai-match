@@ -1,0 +1,216 @@
+[1mdiff --git a/src/app/globals.css b/src/app/globals.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..554bb00[m
+[1m--- /dev/null[m
+[1m+++ b/src/app/globals.css[m
+[36m@@ -0,0 +1,413 @@[m
+[32m+[m[32m@import "tailwindcss";[m
+[32m+[m[32m@tailwind utilities;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m:root {[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Brand / Primary colors[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --colorPrimaryLight: #E4FAFA;[m
+[32m+[m[32m  --colorPrimary: #078B91;[m
+[32m+[m[32m  --colorPrimarySecondary: #122527;[m
+[32m+[m[32m  --colorPrimarySoft: #D2F2F3;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Accent / Highlighting colors[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --colorAccentLight: #EAF7C9;[m
+[32m+[m[32m  --colorAccent: #8BAF27;[m
+[32m+[m[32m  --colorAccent3: #F4FBDD;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Dark themes colors[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --colorPrimaryDark: #091719;[m
+[32m+[m[32m  --colorPrimarySecondaryDark: var(--colorPrimarySecondary);[m
+[32m+[m[32m  --colorBorderDark: #244044;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Neutral[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --colorWhite: #FFFFFF;[m
+[32m+[m[32m  --colorText: #102527;[m
+[32m+[m[32m  --colorTextMuted: #607578;[m
+[32m+[m[32m  --colorBorder: #D9E7E8;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Not part of Brand Colors[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  /*[m
+[32m+[m[32m  --colorSuccess: #159A6C;[m
+[32m+[m[32m  --colorError: #D64545;[m
+[32m+[m[32m  --colorWarning: #D99A24;[m
+[32m+[m
+[32m+[m[32m  --colorSuccess: #4FAF8A;[m
+[32m+[m[32m  --colorError: #D96B6B;[m
+[32m+[m[32m  --colorWarning: #D9AD5C;[m
+[32m+[m[32m  */[m
+[32m+[m
+[32m+[m[32m  --colorSuccess: #70BFA3;[m
+[32m+[m[32m  --colorError: #E28A8A;[m
+[32m+[m[32m  --colorWarning: #E0BF7A;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Font Family[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --font-family-base: Verdana, sans-serif;[m
+[32m+[m[32m  --font-family-heading: Georgia, serif;[m
+[32m+[m[32m  --font-family-mono: "Courier New", monospace;[m
+[32m+[m[32m  --font-family-quotes-base: "Open Sans", sans-serif;[m
+[32m+[m[32m  --font-family-quotes-heading: "Times New Roman", serif;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Light Mode[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m[32m  --background: var(--colorPrimaryLight);[m
+[32m+[m[32m  --foreground: var(--colorText);[m
+[32m+[m
+[32m+[m[32m  --backgroundSecondary: var(--colorPrimarySoft);[m
+[32m+[m
+[32m+[m[32m  --navBackground: var(--colorPrimarySecondary);[m
+[32m+[m[32m  --navForeground: var(--colorPrimaryLight);[m
+[32m+[m
+[32m+[m[32m  --navHoverBackground: var(--colorPrimary);[m
+[32m+[m[32m  --navHoverForeground: var(--colorWhite);[m
+[32m+[m
+[32m+[m[32m  --buttonBackground: var(--colorPrimary);[m
+[32m+[m[32m  --buttonForeground: var(--colorWhite);[m
+[32m+[m[32m  --buttonHoverBackground: var(--colorPrimarySecondary);[m
+[32m+[m
+[32m+[m[32m  --cardBackground: var(--colorWhite);[m
+[32m+[m[32m  --cardForeground: var(--colorText);[m
+[32m+[m
+[32m+[m[32m  --cardBorder: var(--colorBorder);[m
+[32m+[m[32m  --colorBorder: var(--colorBorderDark);[m
+[32m+[m
+[32m+[m[32m  --glowPrimary: color-mix(in srgb, var(--colorPrimary) 15%, transparent);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhtml.dark {[m
+[32m+[m[32m  /**************************************************[m
+[32m+[m[32m  Dark Mode[m
+[32m+[m[32m  **************************************************/[m
+[32m+[m
+[32m+[m[32m  --background: var(--colorPrimaryDark);[m
+[32m+[m[32m  --foreground: var(--colorPrimaryLight);[m
+[32m+[m
+[32m+[m[32m  --backgroundSecondary: var(--colorPrimarySecondaryDark);[m
+[32m+[m
+[32m+[m[32m  --navBackground: var(--colorPrimarySecondary);[m
+[32m+[m[32m  --navForeground: var(--colorPrimaryLight);[m
+[32m+[m
+[32m+[m[32m  --navHoverBackground: var(--colorPrimary);[m
+[32m+[m[32m  --navHoverForeground: var(--colorWhite);[m
+[32m+[m
+[32m+[m[32m  --buttonBackground: var(--colorPrimary);[m
+[32m+[m[32m  --buttonForeground: var(--colorWhite);[m
+[32m+[m[32m  --buttonHoverBackground: var(--colorAccent);[m
+[32m+[m
+[32m+[m[32m  --cardBackground: var(--colorPrimarySecondary);[m
+[32m+[m[32m  --cardForeground: var(--colorPrimaryLight);[m
+[32m+[m
+[32m+[m[32m  --cardBorder: var(--colorBorderDark);[m
+[32m+[m
+[32m+[m[32m  --colorBorder: var(--colorPrimaryLight);[m
+[32m+[m
+[32m+[m[32m  --glowPrimary: color-mix(in srgb, var(--colorPrimary) 15%, transparent);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mbody {[m
+[32m+[m[32m  background: var(--background);[m
+[32m+[m[32m  color: var(--foreground);[m
+[32m+[m
+[32m+[m[32m  font-family: var(--font-family-base);[m
+[32m+[m[32m  font-weight: 200;[m
+[32m+[m[32m  font-size: 15px;[m
+[32m+[m[32m  line-height: 1.5;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@layer base {[m
+[32m+[m[32m  h1 {font-size: 36px;}[m
+[32m+[m[32m  h2 {font-size: 30px;}[m
+[32m+[m[32m  h3 {font-size: 24px;}[m
+[32m+[m[32m  h4 {font-size: 20px;}[m
+[32m+[m[32m  h5 {font-size: 14px;}[m
+[32m+[m[32m  h6 {font-size: 8px;}[m
+[32m+[m[32m  p {font-size: 16px;}[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.taglineTextColor {[m
+[32m+[m[32m  color: var(--colorTextMuted);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.taglineBackground {[m
+[32m+[m[32m  background-color: var(--colorPrimarySoft);[m
+[32m+[m[32m  color: var(--colorPrimary);[m
+[32m+[m[32m  border: 1px solid var(--colorPrimary);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m.brandAccentLine {[m
+[32m+[m[32m  background-color: var(--colorPrimary);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m.iconBtnDiv {[m
+[32m+[m[32m  /*border: 1px solid var(--colorBorder);*/[m
+[32m+[m[32m  color: var(--colorPrimary);[m
+[32m+[m[32m  transition: all 400ms;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.iconBtnDiv:hover {[m
+[32m+[m[32m  /*border: 1px solid var(--colorPrimary);*/[m
+[32m+[m[32m  background-color: var(--colorPrimary);[m
+[32m+[m[32m  color: var(--colorPrimarySoft);[m
+[32m+[m[32m  transform: translateY(-0.3rem);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.iconInGroup {[m
+[32m+[m[32m  border: 1px solid color-mix(in srgb, var(--colorPrimary) 30%, transparent);[m
+[32m+[m[32m  background-color: var(--colorPrimaryLight);[m
+[32m+[m[32m  color: var(--colorPrimary);[m
+[32m+[m[32m  transition: all 300ms;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.iconInGroupOuterDiv:hover .iconInGroup {[m
+[32m+[m[32m  border-color: var(--colorPrimary);[m
+[32m+[m[32m  background-color: var(--colorPrimary);[m
+[32m+[m[32m  color: var(--colorPrimarySoft);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mnav,[m
+[32m+[m[32m.mobile-menu {[m
+[32m+[m[32m  background-color: var(--navBackground);[m
+[32m+[m[32m  border-bottom: 1px solid var(--colorBorderDark);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mnav a,[m
+[32m+[m[32mnav button {[m
+[32m+[m[32m  background-color: transparent;[m
+[32m+[m[32m  color: var(--navForeground);[m
+[32m+[m[32m}[m
+[32m+[m
+[3
